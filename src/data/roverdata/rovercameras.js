@@ -1,4 +1,4 @@
-{
+const ROVER_DATA = {
     "rover":{
         "curiosity": [
             "FHAZ",
@@ -27,3 +27,6 @@
     }
 
 }
+
+export default ROVER_DATA
+

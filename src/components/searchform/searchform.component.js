@@ -4,31 +4,42 @@ import Button from "@material-ui/core/Button"
 
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select' 
+import Select from '@material-ui/core/Select'
+
+import ROVER_DATA from  '../../data/roverdata/rovercameras.js' 
 
 const SearchForm = (props) => {
 
     const [cam, handleCam] = useState("")
     const [sol, handleSol] = useState("")
     const [rover, handleRover] = useState("")
+    const [menuItems, setMenuItems] = useState([
+        "FHAZ",
+        "RHAZ",
+        "MAST",
+        "CHEMCAM",
+        "MAHLI",
+        "MARDI",
+        "NAVCAM"
+    ])
 
-    // const handleClick = (event) =>{
-    //     // props.getData()
-    //     console.log(event)
-    // }
+    console.log(menuItems)
 
     const handleRoverChange = (event) =>{
         handleRover(event.target.value)
 
         if(event.target.value === "Curiosity"){
-            console.log("Curiosity")
-        } else if (event.target.value === "Opportunity"){
-            console.log("Opportunity")
-        }else{
-            console.log("Spirit")
-        }
+            setMenuItems(ROVER_DATA.rover.curiosity)
+            console.log("Rovers cams " + menuItems)
 
-        // console.log(rover)
+        } else if (event.target.value === "Opportunity"){
+            setMenuItems(ROVER_DATA.rover.opportunity)
+            console.log("Rovers cams " + menuItems)
+
+        }else{
+            setMenuItems(ROVER_DATA.rover.spirit)
+            console.log("Rovers cams " + menuItems)
+        }
     }
 
     const handleCamChange = (event) => {
@@ -67,13 +78,8 @@ const SearchForm = (props) => {
                     value={cam}
                     onChange={handleCamChange}
                 >
-                    <MenuItem value={'FHAZ'}>Front Hazard Avoidance Camera</MenuItem>
-                    <MenuItem value={'RHAZ'}>Rear Hazard Avoidance Camera</MenuItem>
-                    <MenuItem value={'MAST'}>Mast Camera</MenuItem>
-                    <MenuItem value={'CHEMCAM'}>Chemistry and Camera Complex</MenuItem>
-                    <MenuItem value={'MAHLI'}>Mars Hand Lens Imager</MenuItem>
-                    <MenuItem value={'MARDI'}>Mars Descent Imager</MenuItem>
-                    <MenuItem value={'NAVCAM'}>Navigation Camera</MenuItem>
+                    {menuItems.map(item => <MenuItem value={item}>{item}</MenuItem>)}
+
                 </Select>
             </div>
 
