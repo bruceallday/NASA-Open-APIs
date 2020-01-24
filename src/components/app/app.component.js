@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import LinearProgress from '@material-ui/core/LinearProgress'
-// import Loader from '../loader/loader.component.js'
+// import LinearProgress from '@material-ui/core/LinearProgress'
+import Loader from '../loader/loader.component.js'
 
 import RoverImages from '../roverimage/roverimage.component.js'
 import SearchForm from '../searchform/searchform.component.js'
@@ -26,7 +26,7 @@ const App = () => {
             }).then((data) => {
                 console.log('noerror');
                 console.log(data)
-                setLoading(false)
+                // setLoading(false)
 
                 if(data.error){
                     console.log(data.error)
@@ -35,6 +35,7 @@ const App = () => {
                 } else if (data.photos < 1){
                     console.log("EMPTY_ARRAY")
                     alert("No images for this sol")
+                    setLoading(false)
                     return
 
                 }else{
@@ -57,7 +58,7 @@ const App = () => {
                         key={i}
                         imageUrl={img.img_src}/>)
 
-                    : <LinearProgress/> }
+                    : <Loader isLoading={isLoading} />}
 
             </div>
         </div>

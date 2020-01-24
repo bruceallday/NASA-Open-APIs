@@ -1,17 +1,15 @@
-// import React from 'react'
-// import LinearProgress from '@material-ui/core/LinearProgress'
+import React from 'react'
+import LinearProgress from '@material-ui/core/LinearProgress'
 
-// const Loader = (props) => {
+const Loader = (props) => {
 
-//     if(props.isLoading){
-//         return(
-//             <LinearProgress />
-//         )
-//     }
-//     else{
-//         props.isLoading = false
-//     }
+    return(
+        <div>
+            {props.isLoading ? <LinearProgress /> : <p></p>}
+        </div>
+       
+    )
     
-// }
+}
 
-// export default Loader 
+export default Loader 
