@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-// import LinearProgress from '@material-ui/core/LinearProgress'
 import Loader from '../loader/loader.component.js'
+import Grid from '@material-ui/core/Grid'
 
 import RoverImages from '../roverimage/roverimage.component.js'
 import SearchForm from '../searchform/searchform.component.js'
@@ -54,12 +54,27 @@ const App = () => {
         
             <div className="imgContainer">
 
+
+
+
+            <Grid container spacing={3}>
+
                 {data ? data.photos.map((img, i) =>
+                    <Grid item>
                     <RoverImages
                         key={i}
-                        imageUrl={img.img_src}/>)
+                        imageUrl={img.img_src}/>
+                    </Grid>)
 
                     : <Loader isLoading={isLoading} />}
+            </Grid>
+
+
+
+
+
+
+
 
             </div>
         </div>
