@@ -28,28 +28,23 @@ const SearchForm = (props) => {
     const handleRoverChange = (event) =>{
         handleRover(event.target.value)
 
-        if(event.target.value === "Curiosity"){
+        if (event.target.value === "Curiosity"){
             setMenuItems(ROVER_DATA.rover.curiosity)
-            console.log("Rovers cams " + menuItems)
 
         } else if (event.target.value === "Opportunity"){
             setMenuItems(ROVER_DATA.rover.opportunity)
-            console.log("Rovers cams " + menuItems)
 
-        }else{
+        } else {
             setMenuItems(ROVER_DATA.rover.spirit)
-            console.log("Rovers cams " + menuItems)
         }
     }
 
     const handleCamChange = (event) => {
         handleCam(event.target.value)
-        console.log(cam)
     }
 
     const handleSolChange = (event) => {
         handleSol(event.target.value)
-        console.log(sol)
     }
 
     return(
@@ -61,37 +56,37 @@ const SearchForm = (props) => {
                     labelId="rover-label"
                     id="rover-select"
                     value={rover}
-                    onChange={handleRoverChange}
-                >
+                    onChange={handleRoverChange}>
+                
                     <MenuItem value={'Curiosity'}>Curiosity</MenuItem>
                     <MenuItem value={'Opportunity'}>Opportunity</MenuItem>
                     <MenuItem value={'Spirit'}>Spirit</MenuItem>
+
                 </Select>
             </div>
 
-            
             <div>
-                <InputLabel id="demo-simple-select-label">Choose a Camera</InputLabel>
+                <InputLabel id="camera-label">Choose a Camera</InputLabel>
                 <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
+                    labelId="camera-label"
+                    id="camera-select"
                     value={cam}
-                    onChange={handleCamChange}
-                >
-                    {menuItems.map(item => <MenuItem value={item}>{item}</MenuItem>)}
+                    onChange={handleCamChange}>
 
+                    {menuItems.map((item, id) => <MenuItem key={id} value={item}>{item}</MenuItem>)}
                 </Select>
             </div>
 
-            <TextField onChange={handleSolChange} id="standard-basic" placeholder="0000" label="Sol (0002 - 2540)" />
+            <TextField
+                onChange={handleSolChange}
+                id="standard-basic"
+                placeholder="0000"
+                label="Sol (0002 - 2540)"/>
 
             <Button
                 variant="contained"
-                onClick={()=>{
-                    props.getData(sol, cam, rover);
-                }}
-                >
-                LAUNCH
+                onClick={()=>{props.getData(sol, cam, rover)}}
+                >LAUNCH
             </Button>
 
         </div>
