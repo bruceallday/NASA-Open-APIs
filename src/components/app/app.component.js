@@ -40,6 +40,7 @@ const App = () => {
 
                 }else{
                     setData(data);
+                    console.log(data)
                     setLoading(false)
                 }
             })
@@ -51,7 +52,7 @@ const App = () => {
 
             <SearchForm getData={getData} />
         
-            <div className="imageDiv">
+            <div className="imgContainer">
 
                 {data ? data.photos.map((img, i) =>
                     <RoverImages

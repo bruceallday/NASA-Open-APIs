@@ -81,7 +81,7 @@ const SearchForm = (props) => {
                 onChange={handleSolChange}
                 id="standard-basic"
                 placeholder="0000"
-                label="Sol (0002 - 2540)"/>
+                label="Sol (0000 - 2540)"/>
 
             <Button
                 variant="contained"

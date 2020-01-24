@@ -7,9 +7,7 @@ const Loader = (props) => {
         <div>
             {props.isLoading ? <LinearProgress /> : <p></p>}
         </div>
-       
     )
-    
 }
 
 export default Loader 
