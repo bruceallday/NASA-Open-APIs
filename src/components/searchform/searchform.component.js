@@ -18,9 +18,17 @@ const SearchForm = (props) => {
     // }
 
     const handleRoverChange = (event) =>{
-        console.log(event)
         handleRover(event.target.value)
-        console.log(rover)
+
+        if(event.target.value === "Curiosity"){
+            console.log("Curiosity")
+        } else if (event.target.value === "Opportunity"){
+            console.log("Opportunity")
+        }else{
+            console.log("Spirit")
+        }
+
+        // console.log(rover)
     }
 
     const handleCamChange = (event) => {

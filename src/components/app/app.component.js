@@ -10,18 +10,20 @@ import './app.styles.css'
 const App = () => {
 
     const [data, setData] = useState(null)
-    // const loader = <LinearProgress />
+    const [isLoading, setLoading] = useState(false)
 
     const getData = (sol, camera, rover) => {
         console.log("UPDATED_APP")
         setData(null)
+        setLoading(true)
 
-        fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&page=1&api_key=YOUR_KEY`)
+        fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&page=1&api_key=unwJcljHmbUCbFdgeIzK7VeAQCsWGDACb2Fp0AK4`)
             .then((result) => {
                     return result.json();
 
             }).then((data) => {
                 console.log('noerror');
+                console.log(data)
 
                 if(data.error){
                     console.log(data.error)
@@ -33,6 +35,7 @@ const App = () => {
 
                 }else{
                     setData(data);
+                    setLoading(false)
                 }
             })
     }
@@ -45,9 +48,10 @@ const App = () => {
             <SearchForm getData={getData} />
         
             <div className="imageDiv">
+
                 {data ? data.photos.map((img, i) =>
-                    <RoverImages key={i} imageUrl={img.img_src} />)
-                    : <LinearProgress/>}
+                     <RoverImages key={i} imageUrl={img.img_src}/>)
+                    : <LinearProgress />}
 
             </div>
 
