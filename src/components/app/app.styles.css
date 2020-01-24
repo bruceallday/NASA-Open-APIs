@@ -1,0 +1,15 @@
+.imageDiv{
+    margin: 30px;
+}
+
+.searchForm{
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.nasa-logo{
+    width: 20%;
+    height: 20%;
+}
