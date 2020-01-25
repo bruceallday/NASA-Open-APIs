@@ -7,7 +7,7 @@ const RoverImages = (props) =>{
     return (
       <div>
         <img className="roverImg" src={props.imageUrl} alt="Mars landscape" />
-        <GridListTileBar title={`Earth Date: ${props.earthDate}`} />
+        <GridListTileBar title={`Sol: ${props.solDate}`} />
       </div>
     );
 }

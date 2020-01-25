@@ -61,7 +61,7 @@ const App = () => {
                 <RoverImages
                   key={i}
                   imageUrl={item.img_src}
-                  earthDate={item.earth_date}
+                  solDate={item.sol}
                 />
               </GridListTile>
             ))
