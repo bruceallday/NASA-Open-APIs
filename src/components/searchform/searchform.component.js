@@ -25,7 +25,6 @@ const SearchForm = (props) => {
         } else {
           setMenuItems(ROVER_DATA.rover.opportunity_spirit);
         }
-       
     }
 
     const handleCamChange = (event) => {
@@ -75,7 +74,7 @@ const SearchForm = (props) => {
 
             <Button
                 variant="contained"
-                onClick={()=>{props.getData(sol, cam, rover)}}
+                onClick={()=>{props.getData(sol, cam[0], rover)}}
                 >LAUNCH
             </Button>
 

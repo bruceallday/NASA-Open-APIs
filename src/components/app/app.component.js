@@ -22,7 +22,7 @@ const App = () => {
         setLoading(true)
 
         fetch(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&page=1&api_key=uYOUR_KEY`
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&page=1&api_key=unwJcljHmbUCbFdgeIzK7VeAQCsWGDACb2Fp0AK4`
         )
           .then(result => {
             return result.json();
