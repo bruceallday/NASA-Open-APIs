@@ -1,8 +1,9 @@
 import React from 'react'
+import './roverimage.styles.css'
 
 const RoverImages = (props) =>{
     return(
-       <img src={props.imageUrl} alt='Mars landscape' />
+       <img className="roverImg" src={props.imageUrl} alt='Mars landscape' />
     )
 }
 
