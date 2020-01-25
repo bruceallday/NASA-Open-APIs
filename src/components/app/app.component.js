@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import Loader from '../loader/loader.component.js'
 
 import GridList from "@material-ui/core/GridList";
 import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 import RoverImages from '../roverimage/roverimage.component.js'
 import SearchForm from '../searchform/searchform.component.js'
 
 import './app.styles.css'
-
 
 
 const App = () => {
@@ -35,15 +33,13 @@ const App = () => {
                 setLoading(false);
 
             } else if (data.photos < 1) {
-                console.log("EMPTY_ARRAY");
                 alert("No images on this camera, for this sol.");
                 setLoading(false);
               return;
 
             } else {
                 setData(data);
-                setLoading(false);
-                
+                setLoading(false);                
             }
           });
     }
@@ -72,9 +68,11 @@ const App = () => {
               </GridListTile>
             ))
           ) : (
-            <Loader key={0} isLoading={isLoading} />
+            <p></p>
           )}
         </GridList>
+        {isLoading ? <LinearProgress /> : <p></p>}
+        
       </div>
     );
 }
