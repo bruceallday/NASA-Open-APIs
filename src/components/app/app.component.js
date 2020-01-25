@@ -18,19 +18,17 @@ const App = () => {
     const [isLoading, setLoading] = useState(false)
 
     const getData = (sol, camera, rover) => {
-        console.log("UPDATED_APP")
         setData(null)
         setLoading(true)
 
         fetch(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&page=1&api_key=YOUR_KEY`
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&page=1&api_key=uYOUR_KEY`
         )
           .then(result => {
             return result.json();
           })
           .then(data => {
             console.log(data);
-            // setLoading(false)
 
             if (data.error) {
                 console.log(data.error);
@@ -38,17 +36,19 @@ const App = () => {
 
             } else if (data.photos < 1) {
                 console.log("EMPTY_ARRAY");
-                alert("No images for this sol");
+                alert("No images on this camera, for this sol.");
                 setLoading(false);
               return;
 
             } else {
                 setData(data);
-                console.log(data);
                 setLoading(false);
+                
             }
           });
     }
+
+    console.log(data)
 
     return (
       <div className="app">
@@ -62,12 +62,12 @@ const App = () => {
 
         <GridList cellHeight="100%">
           {data ? (
-            data.photos.map((img, i) => (
+            data.photos.map((item, i) => (
               <GridListTile key={i} item>
                 <RoverImages
                   key={i}
-                  imageUrl={img.img_src}
-                  earthDate={img.earth_date}
+                  imageUrl={item.img_src}
+                  earthDate={item.earth_date}
                 />
               </GridListTile>
             ))

@@ -14,30 +14,18 @@ const SearchForm = (props) => {
     const [cam, handleCam] = useState("")
     const [sol, handleSol] = useState("")
     const [rover, handleRover] = useState("")
-    const [menuItems, setMenuItems] = useState([
-        "FHAZ",
-        "RHAZ",
-        "MAST",
-        "CHEMCAM",
-        "MAHLI",
-        "MARDI",
-        "NAVCAM"
-    ])
-
-    console.log(menuItems)
+    const [menuItems, setMenuItems] = useState(ROVER_DATA.rover.curiosity);
 
     const handleRoverChange = (event) =>{
         handleRover(event.target.value)
 
-        if (event.target.value === "Curiosity"){
-            setMenuItems(ROVER_DATA.rover.curiosity)
-
-        } else if (event.target.value === "Opportunity"){
-            setMenuItems(ROVER_DATA.rover.opportunity)
+        if (event.target.value === "Curiosity") {
+          setMenuItems(ROVER_DATA.rover.curiosity);
 
         } else {
-            setMenuItems(ROVER_DATA.rover.spirit)
+          setMenuItems(ROVER_DATA.rover.opportunity_spirit);
         }
+       
     }
 
     const handleCamChange = (event) => {
@@ -75,6 +63,7 @@ const SearchForm = (props) => {
                     onChange={handleCamChange}>
 
                     {menuItems.map((item, id) => <MenuItem key={id} value={item}>{item}</MenuItem>)}
+
                 </Select>
             </div>
 
