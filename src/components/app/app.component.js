@@ -7,7 +7,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import RoverImages from '../roverimage/roverimage.component.js'
 import SearchForm from '../searchform/searchform.component.js'
 
-import './app.styles.css'
+import './app.styles.scss'
 
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
         setLoading(true)
 
         fetch(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&page=1&api_key=unwJcljHmbUCbFdgeIzK7VeAQCsWGDACb2Fp0AK4`
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&page=1&api_key=YOUR_KEY`
         )
           .then(result => {
             return result.json();
@@ -29,17 +29,15 @@ const App = () => {
             console.log(data);
 
             if (data.error) {
-                console.log(data.error);
-                setLoading(false);
-
+              console.log(data.error);
+              setLoading(false);
             } else if (data.photos < 1) {
-                alert("No images on this camera, for this sol.");
-                setLoading(false);
+              alert("No images on this camera, for this sol.");
+              setLoading(false);
               return;
-
             } else {
-                setData(data);
-                setLoading(false);                
+              setData(data);
+              setLoading(false);
             }
           });
     }
