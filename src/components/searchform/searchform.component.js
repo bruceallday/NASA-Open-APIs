@@ -49,8 +49,9 @@ const SearchForm = (props) => {
     }
 
     const handleDateChange = (date) => {
-        console.log(date)
-        handleDate(date)
+        let finaldate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}` 
+        console.log("FINAL DATE: " +  finaldate)
+        handleDate(finaldate)
     }
 
     const handleSolChange = (event) => {
@@ -104,7 +105,7 @@ const SearchForm = (props) => {
           <KeyboardDatePicker
             disableToolbar
             variant="inline"
-            format="MM/dd/yyyy"
+            format="yyy/MM/dd"
             margin="normal"
             id="date-picker-inline"
             label="Choose a date"
