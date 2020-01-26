@@ -57,11 +57,13 @@ const App = () => {
     }
 
     return (
-
       <div className="app">
-
-      <Header/>
-      <br/>
+        <Header />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
         <SearchForm getData={getData} />
 
@@ -73,7 +75,6 @@ const App = () => {
                   key={i}
                   imageUrl={item.img_src}
                   solDate={item.sol}
-                  
                 />
               </GridListTile>
             ))
@@ -82,7 +83,6 @@ const App = () => {
           )}
         </GridList>
         {isLoading ? <LinearProgress /> : <p></p>}
-        
       </div>
     );
 }

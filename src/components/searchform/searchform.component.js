@@ -1,4 +1,5 @@
 import 'date-fns'
+import './searchform.styles.scss'
 
 import React, { useState } from 'react'
 import Button from "@material-ui/core/Button"

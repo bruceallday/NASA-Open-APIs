@@ -18,6 +18,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
+import './header.styles.scss'
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -93,7 +95,7 @@ export default function Header() {
         <div className={classes.root}>
             <CssBaseline />
             <AppBar
-                position="fixed"
+                // {/*position="fixed"*/}
                 className={clsx(classes.appBar, {
                     [classes.appBarShift]: open,
                 })}
@@ -108,9 +110,9 @@ export default function Header() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap>
-                        Persistent drawer
-          </Typography>
+                    <Typography>
+                        <img className="nasa-logo-img" src='/nasologo.png' />
+                    </Typography>
                 </Toolbar>
             </AppBar>
             <Drawer
