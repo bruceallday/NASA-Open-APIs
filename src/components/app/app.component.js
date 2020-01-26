@@ -12,6 +12,8 @@ import './app.styles.scss'
 
 const App = () => {
 
+  console.log("APP_START")
+
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
 
@@ -23,6 +25,8 @@ const App = () => {
           alert("Please complete all fields")
           return
         }
+
+        console.log("Date  "+ date)
 
         setData(null)
         setLoading(true)
