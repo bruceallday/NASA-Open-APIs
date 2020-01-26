@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 
-import GridList from "@material-ui/core/GridList";
-import GridListTile from '@material-ui/core/GridListTile';
-import LinearProgress from "@material-ui/core/LinearProgress";
+import GridList from "@material-ui/core/GridList"
+import GridListTile from '@material-ui/core/GridListTile'
+import LinearProgress from "@material-ui/core/LinearProgress"
 
 import RoverImages from '../roverimage/roverimage.component.js'
 import SearchForm from '../searchform/searchform.component.js'
+import Header from '../header/header.component.js'
 
 import './app.styles.scss'
 
@@ -56,12 +57,11 @@ const App = () => {
     }
 
     return (
+
       <div className="app">
-        <img
-          className="nasa-logo"
-          src="http://www.collectspace.com/images/news-080513c-lg.jpg"
-          alt="logo"
-        />
+
+      <Header/>
+      <br/>
 
         <SearchForm getData={getData} />
 

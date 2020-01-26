@@ -1,10 +1,8 @@
 import 'date-fns'
 
 import React, { useState } from 'react'
-import TextField from '@material-ui/core/TextField'
 import Button from "@material-ui/core/Button"
 
-import Grid from "@material-ui/core/Grid"
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
@@ -31,15 +29,15 @@ const SearchForm = (props) => {
 
         if (event.target.value === "Curiosity") {
           setMenuItems(ROVER_DATA.rover.curiosity);
-          // handleDate(ROVER_DATA.rover.landing_dates[0][1])
+          handleDate(ROVER_DATA.rover.landing_dates[0][1])
 
         } else if (event.target.value === "Opportunity") {
           setMenuItems(ROVER_DATA.rover.opportunity_spirit);
-          // handleDate(ROVER_DATA.rover.landing_dates[1][1])
+          handleDate(ROVER_DATA.rover.landing_dates[1][1])
 
         } else {
           setMenuItems(ROVER_DATA.rover.opportunity_spirit);
-          // handleDate(ROVER_DATA.rover.landing_dates[2][1])
+          handleDate(ROVER_DATA.rover.landing_dates[2][1])
         }
     }
 
@@ -47,8 +45,9 @@ const SearchForm = (props) => {
         handleCam(event.target.value)
     }
 
-    const handleDateChange = (date) => {
-      let finaldate = `${date.getFullYear()}-${(date.getMonth() + 1)}-${date.getDate()}` 
+    const handleDateChange = (event) => {
+      console.log("here is the terget.value" + event)
+      let finaldate = `${event.getFullYear()}-${(event.getMonth() + 1)}-${event.getDate()}` 
         console.log("FINAL DATE: " +  finaldate)
         handleDate(finaldate)
     }
@@ -104,7 +103,7 @@ const SearchForm = (props) => {
           <KeyboardDatePicker
             disableToolbar
             variant="inline"
-            format="yyy/MM/dd"
+            format="yyyy/MM/dd"
             id="date-picker-inline"
             label="Choose a date"
             value={date}

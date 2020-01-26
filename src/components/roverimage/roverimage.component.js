@@ -1,6 +1,6 @@
 import React from 'react'
 import GridListTileBar from "@material-ui/core/GridListTileBar";
-import './roverimage.styles.css'
+import './roverimage.styles.scss'
 
 const RoverImages = (props) =>{
 
