@@ -33,14 +33,17 @@ const SearchForm = (props) => {
         if (event.target.value === "Curiosity") {
           setMenuItems(ROVER_DATA.rover.curiosity);
           handleDate(ROVER_DATA.rover.landing_dates[0][1])
+          console.log("ROVER CUR DATA DATE: " + ROVER_DATA.rover.landing_dates[0][1])
 
         } else if (event.target.value === "Opportunity") {
           setMenuItems(ROVER_DATA.rover.opportunity_spirit);
           handleDate(ROVER_DATA.rover.landing_dates[1][1])
+          console.log("ROVER OPP DATA DATE: " + ROVER_DATA.rover.landing_dates[1][1])
 
         } else {
           setMenuItems(ROVER_DATA.rover.opportunity_spirit);
           handleDate(ROVER_DATA.rover.landing_dates[2][1])
+          console.log("ROVER SPI DATA DATE: " + ROVER_DATA.rover.landing_dates[2][1])
         }
     }
 
@@ -49,7 +52,7 @@ const SearchForm = (props) => {
     }
 
     const handleDateChange = (date) => {
-        let finaldate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}` 
+        let finaldate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}` 
         console.log("FINAL DATE: " +  finaldate)
         handleDate(finaldate)
     }
