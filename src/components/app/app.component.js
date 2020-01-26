@@ -15,12 +15,24 @@ const App = () => {
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
 
-    const getData = (sol, camera, rover) => {
+      
+    {/*CHANGE DATE TO SOL BELOW FOR API REQUEST*/}
+
+    const getData = (date, camera, rover, sol) => {
+
+      console.log("On submit: " + date)
+      
+
+        if(date === "" || camera === "" || rover === "") {
+          alert("Please complete all fields")
+          return
+        }
+
         setData(null)
         setLoading(true)
 
         fetch(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&camera=${camera}&page=1&api_key=YOUR_KEY`
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&camera=${camera}&page=1&api_key=`
         )
           .then(result => {
             return result.json();
@@ -38,11 +50,11 @@ const App = () => {
             } else {
               setData(data);
               setLoading(false);
+              console.log("LANDING DATE: " + data[0])
             }
           });
     }
 
-    console.log(data)
 
     return (
       <div className="app">
@@ -52,7 +64,7 @@ const App = () => {
           alt="logo"
         />
 
-        <SearchForm getData={getData} />
+        <SearchForm getData={getData} landingDate={ data ? data.photos[0].rover.landing_date : "2015-07-07"} />
 
         <GridList cellHeight="100%">
           {data ? (
@@ -62,6 +74,7 @@ const App = () => {
                   key={i}
                   imageUrl={item.img_src}
                   solDate={item.sol}
+                  
                 />
               </GridListTile>
             ))
