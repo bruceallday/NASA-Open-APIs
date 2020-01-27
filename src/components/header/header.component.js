@@ -9,7 +9,7 @@ import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+// import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
@@ -109,11 +109,11 @@ export default function Header() {
               edge="start"
               className={clsx(classes.menuButton, open && classes.hide)}
             >
-              <ChevronRightIcon style={{ color: "black"}} />
+              <ChevronRightIcon style={{ color: "#212121" }} />
             </IconButton>
 
             <Typography>
-              <img className="nasa-logo-img" src="/nasologo.png" />
+              <img className="nasa-logo-img" src="/nasologo.png" alt="nasa logo" />
             </Typography>
           </Toolbar>
         </AppBar>
@@ -129,9 +129,9 @@ export default function Header() {
           <div className={classes.drawerHeader}>
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === "ltr" ? (
-                <ChevronLeftIcon />
+                <ChevronLeftIcon style={{ color: "#212121" }} />
               ) : (
-                <ChevronRightIcon />
+                <ChevronRightIcon style={{ color: "#212121" }} />
               )}
             </IconButton>
           </div>
@@ -142,7 +142,7 @@ export default function Header() {
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText primary={text} style={{ color: "#212121" }} />
               </ListItem>
             ))}
           </List>

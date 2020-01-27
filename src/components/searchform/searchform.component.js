@@ -1,19 +1,19 @@
+import React, { useState } from "react";
+
 import 'date-fns'
-import './searchform.styles.scss'
+import DateFnsUtils from "@date-io/date-fns";
 
-import React, { useState } from 'react'
 import Button from "@material-ui/core/Button"
-
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
 
-import DateFnsUtils from "@date-io/date-fns";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
 } from "@material-ui/pickers";
 
+import "./searchform.styles.scss";
 
 import ROVER_DATA from  '../../data/roverdata/rovercameras.js' 
 
@@ -116,9 +116,9 @@ const SearchForm = (props) => {
         </MuiPickersUtilsProvider>
 
         <Button
+         style={{color: "#212121"}}
           variant="contained"
           onClick={() => {
-
             props.getData(date, cam[0], rover);
           }}
         >

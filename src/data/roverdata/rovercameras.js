@@ -17,7 +17,7 @@ const ROVER_DATA = {
       ["MINITES", " (Miniature Thermal Emission Spectrometer) (Mini-TES)"]
     ],
     landing_dates:[
-      ["Curiosity" ,"2012-08-06"],
+      ["Curiosity" ,  "2012-08-06"],
       ["Opportunity", "2004-01-25"],
       ["Spirit", "2004-01-04"]
     ]
