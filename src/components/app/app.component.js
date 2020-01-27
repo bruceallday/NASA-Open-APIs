@@ -2,6 +2,7 @@ import React from 'react'
 
 import Header from '../header/header.component.js'
 import RoversPage from '../marsroverpage/marsrover.component.js'
+import PictureOfTheDay from '../APOD/apod.component.js'
 
 import './app.styles.scss'
 
@@ -14,7 +15,8 @@ const App = () => {
       <div className="">
 
         <Header />
-        <RoversPage/>
+        {/*<RoversPage />*/}
+        <PictureOfTheDay />
         
       </div>
 

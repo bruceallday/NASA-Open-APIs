@@ -13,7 +13,7 @@ import {
   KeyboardDatePicker
 } from "@material-ui/pickers";
 
-import "./searchform.styles.scss";
+import "./rover-searchform.styles.scss";
 
 import ROVER_DATA from  '../../data/roverdata/rovercameras.js' 
 

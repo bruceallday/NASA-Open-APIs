@@ -20,7 +20,7 @@ import MailIcon from '@material-ui/icons/Mail';
 
 import './header.styles.scss'
 
-const drawerWidth = 340;
+const drawerWidth = 360;
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -146,7 +146,8 @@ export default function Header() {
               "+ Insight: Mars weather service",
               "+ APOD: Astronomy picture of the day",
               "+ Earth: Earth observation data",
-              "+ Asteroids - NeoWs: Near earth objects "
+              "+ Asteroids - NeoWs: Near earth objects",
+              "+ EPIC: Earth Polychromatic Imaging Camera"
             ].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemText primary={text} style={{ color: "#212121" }} />

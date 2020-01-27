@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import SearchForm from '../searchform/searchform.component.js'
+import SearchForm from '../rover-searchform/rover-searchform.component.js'
 import RoverImages from "../roverimage/roverimage.component.js";
 
 import GridList from "@material-ui/core/GridList"
@@ -27,7 +27,7 @@ const RoversPage = () => {
         setLoading(true)
 
         const result = await fetch(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&camera=${camera}&page=1&api_key=u`
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&camera=${camera}&page=1&api_key=`
         );
 
         const data = await result.json()
