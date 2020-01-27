@@ -27,7 +27,7 @@ const RoversPage = () => {
         setLoading(true)
 
         const result = await fetch(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&camera=${camera}&page=1&api_key=`
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&camera=${camera}&page=1&api_key=u`
         );
 
         const data = await result.json()

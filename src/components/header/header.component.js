@@ -20,7 +20,7 @@ import MailIcon from '@material-ui/icons/Mail';
 
 import './header.styles.scss'
 
-const drawerWidth = 240;
+const drawerWidth = 340;
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -113,7 +113,11 @@ export default function Header() {
             </IconButton>
 
             <Typography>
-              <img className="nasa-logo-img" src="/nasologo.png" alt="nasa logo" />
+              <img
+                className="nasa-logo-img"
+                src="/nasologo.png"
+                alt="nasa logo"
+              />
             </Typography>
           </Toolbar>
         </AppBar>
@@ -137,11 +141,14 @@ export default function Header() {
           </div>
           <Divider />
           <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+            {[
+              "+ Mars Rover Images",
+              "+ Insight: Mars weather service",
+              "+ APOD: Astronomy picture of the day",
+              "+ Earth: Earth observation data",
+              "+ Asteroids - NeoWs: Near earth objects "
+            ].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
                 <ListItemText primary={text} style={{ color: "#212121" }} />
               </ListItem>
             ))}
@@ -150,9 +157,6 @@ export default function Header() {
           <List>
             {["All mail", "Trash", "Spam"].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
