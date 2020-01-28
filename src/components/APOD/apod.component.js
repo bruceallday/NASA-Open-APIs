@@ -45,7 +45,7 @@ const PictureOfTheDay = () => {
         {isLoading ? <LinearProgress /> : <p></p>}
         {data ? 
           <div>
-            <PageTitle title={"APOD"} subTitle={"Astronomy pic of the day"} />
+            <PageTitle title={"APOD"} subTitle={"Astronomy picture of the day"} />
             <h2 className="image-of-the-day" >{data.title}</h2>
             <p className="image-of-the-day">{data.explanation}</p>
             <img className="image-of-the-day" src={data.hdurl} alt="pic of the day" />

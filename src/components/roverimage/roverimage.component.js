@@ -4,10 +4,12 @@ import './roverimage.styles.scss'
 
 const RoverImages = (props) =>{
 
+    const { imageUrl, solDate} = props
+
     return (
       <div>
-        <img className="roverImg" src={props.imageUrl} alt="Mars landscape" />
-        <GridListTileBar title={`Sol: ${props.solDate}`} />
+        <img className="roverImg" src={imageUrl} alt="Mars landscape" />
+        <GridListTileBar title={`Sol: ${solDate}`} />
         
         {/*EARTH DAY*/}
         {/*<GridListTileBar title={`Earth Day: ${props.earthDate}`} />*/}

@@ -8,18 +8,15 @@ import './app.styles.scss'
 
 
 const App = () => {
-
   console.log("APP_START")
-
     return (
       <div className="">
 
         <Header />
+
        <RoversPage/>
 
-        
       </div>
-
     );
 }
 
