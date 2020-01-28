@@ -33,9 +33,13 @@ const PictureOfTheDay = () => {
         }else{
             setData(data)
             setLoading(false)
-          console.log(data.url)
+            console.log(data.url)
             
         }
+    }
+
+    const formatDate = (date) => {
+      return Date(date)
     }
 
     console.log(data)
@@ -43,17 +47,25 @@ const PictureOfTheDay = () => {
     return (
       <div className="apodSection">
         {isLoading ? <LinearProgress /> : <p></p>}
-        {data ? 
+        {data ? (
           <div>
-            <PageTitle title={"APOD"} subTitle={"Astronomy picture of the day"} />
-            <h2 className="image-of-the-day" >{data.title}</h2>
+            <PageTitle
+              title={"APOD"}
+              subTitle={"Astronomy picture of the day"}
+            />
+            <p className="photoDate">{formatDate(data.date)}</p>
+            <h2 className="image-of-the-day">{data.title}</h2>
             <p className="image-of-the-day">{data.explanation}</p>
-            <img className="image-of-the-day" src={data.hdurl} alt="pic of the day" />
-            <br/>
-            
-            </div>
-            : <p></p>}
-                  
+            <img
+              className="image-of-the-day"
+              src={data.hdurl}
+              alt="pic of the day"
+            />
+            <br />
+          </div>
+        ) : (
+          <p></p>
+        )}
       </div>
     );
 }

@@ -15,7 +15,7 @@ const App = () => {
 
        {/*<RoversPage/>*/}
        <PictureOfTheDay/>
-       
+
       </div>
     );
 }
