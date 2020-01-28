@@ -3,6 +3,7 @@ import API_KEY from '../../api-key.js'
 
 import SearchForm from '../rover-searchform/rover-searchform.component.js'
 import RoverImages from "../roverimage/roverimage.component.js";
+import PageTitle from "../page-title/page-title.component.js"
 
 import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
@@ -49,8 +50,15 @@ const RoversPage = () => {
         }
     }
         return (
-          <div className="roverComponent">
-            <SearchForm getData={getData} />
+
+          <div>
+
+            <div className="roverComponent">
+
+              <PageTitle title={"Mars Rovers"} subTitle={"Image data gathered by Curiosity, Opportunity and Spirit "} />
+              <SearchForm getData={getData} />
+
+            </div>
 
             <GridList cellHeight={"auto"}>
               {data ? (

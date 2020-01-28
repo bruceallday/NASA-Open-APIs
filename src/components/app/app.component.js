@@ -15,8 +15,8 @@ const App = () => {
       <div className="">
 
         <Header />
-        {/*<RoversPage />*/}
-        <PictureOfTheDay />
+       <RoversPage/>
+
         
       </div>
 
