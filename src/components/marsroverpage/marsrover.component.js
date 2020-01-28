@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import API_KEY from '../../api-key.js'
 
 import SearchForm from '../rover-searchform/rover-searchform.component.js'
 import RoverImages from "../roverimage/roverimage.component.js";
@@ -27,7 +28,7 @@ const RoversPage = () => {
         setLoading(true)
 
         const result = await fetch(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&camera=${camera}&page=1&api_key=`
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${date}&camera=${camera}&page=1&api_key=${API_KEY.apiKey}`
         );
 
         const data = await result.json()

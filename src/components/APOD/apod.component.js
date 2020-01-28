@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import API_KEY from '../../api-key.js'
 
 import LinearProgress from "@material-ui/core/LinearProgress";
 
@@ -19,7 +20,7 @@ const PictureOfTheDay = () => {
         setLoading(true)
 
         const result = await fetch(
-            `https://api.nasa.gov/planetary/apod?api_key=`
+            `https://api.nasa.gov/planetary/apod?api_key=${API_KEY.apiKey}`
         )
 
         const data = await result.json()
@@ -42,11 +43,12 @@ const PictureOfTheDay = () => {
         {isLoading ? <LinearProgress /> : <p></p>}
         {data ? 
           <div>
-            <img className="image-of-the-day" src={data.hdurl} alt="pic of the day" />
+            <p> <span className="pageTitle" >APOD</span> <span className="pageSubTitle" > ( Astronomy pic of the day )</span> </p>
             <h2 className="image-of-the-day" >{data.title}</h2>
             <p className="image-of-the-day">{data.explanation}</p>
+            <img className="image-of-the-day" src={data.hdurl} alt="pic of the day" />
             <br/>
-
+            
             </div>
             : <p></p>}
                   
