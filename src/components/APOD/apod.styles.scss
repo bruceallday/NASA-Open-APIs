@@ -1,19 +1,19 @@
 @mixin mobile{
-    @media(max-width: 500px){
-        @content
+    @media(max-width: 460px){
+        @content;
     }
 }
 
 @mixin tablet{
     @media(max-width: 768px){
-        @content
+        @content;
     }
 }
 
 
 @mixin xltablet{
     @media(max-width: 1024px){
-        @content
+        @content;
     }
 }
 
@@ -26,28 +26,27 @@
 }
 
 .image-of-the-day{
-    width: 80vw;
+    width: 90vw;
     height: 80%;
 
-    @include tablet{
-        height: 50%
-    }
-
-    @include mobile{
-        height: 30%
-    }
-
     @include xltablet{
-        width: 95vw;
         height: 70%;
+
+          @include tablet{
+            height: 55%;
+
+                @include mobile{
+                    height: 40%;
+            }
+        }
     }
 }
 
 .pageTitle{
-    width: 80vw;
+    width: 80vw;    
     font-size: 8em;
-    margin:0px;
-    color: "#212121"
+    margin: 0px;
+    color: "#212121";
 }
 
 .pageSubTitle{
