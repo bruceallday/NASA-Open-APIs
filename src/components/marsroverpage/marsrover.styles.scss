@@ -1,4 +1,15 @@
+@mixin mobile{
+    @media(max-width: 580px){
+        @content
+    }
+}
+
 .roverComponent{
     margin-top: 100px;
     padding: 0px 100px 0px 100px;
+
+    @include mobile{
+        margin-top: 100px;
+        padding: 0px 10px 0px 10px;
+    }
 }

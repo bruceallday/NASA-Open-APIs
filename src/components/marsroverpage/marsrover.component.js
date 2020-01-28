@@ -63,7 +63,7 @@ const RoversPage = () => {
             <GridList cellHeight={"auto"}>
               {data ? (
                 data.photos.map((item, i) => (
-                  <GridListTile key={i}>
+                  <GridListTile s={12} key={i}>
                     <RoverImages
                       key={i}
                       imageUrl={item.img_src}
