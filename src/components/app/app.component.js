@@ -11,11 +11,11 @@ const App = () => {
   console.log("APP_START")
     return (
       <div className="">
-
         <Header />
 
-       <RoversPage/>
-
+       {/*<RoversPage/>*/}
+       <PictureOfTheDay/>
+       
       </div>
     );
 }
