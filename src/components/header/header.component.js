@@ -21,9 +21,7 @@ import {
 
 import { useStyles } from "./header.styles";
 
-export default function Header(props) {
-
-    const { link, link2 } = props 
+export default function Header() {
 
     const classes = useStyles()
     const theme = useTheme()
@@ -87,14 +85,10 @@ export default function Header(props) {
           <Divider />
           <List>
             {[
-              "+ Mars Rover Images",
-              "+ Insight: Mars weather service",
-              "+ APOD: Astronomy picture of the day",
-              "+ Earth: Earth observation data",
-              "+ Asteroids - NeoWs: Near earth objects",
-              "+ EPIC: Earth Polychromatic Imaging Camera"
+              ["+ Mars Rover Images", 'rovers'],
+             [ "+ APOD: Astronomy picture of the day", 'apod'],
             ].map((text, index) => (
-              <Link key={index} to={`/${link}`}>
+              <Link key={index} to={`/${text[1]}`}>
                 <ListItem button key={text}>
                   <ListItemText primary={text} style={{ color: "#212121" }} />
                 </ListItem>

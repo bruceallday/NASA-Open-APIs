@@ -18,7 +18,7 @@ const App = () => {
     return (
       <div className="">
         <Router>
-          <Header link="rovers" link2="apod" />
+          <Header/>
           <Switch>
             <Route path="/rovers">
               <RoversPage />
