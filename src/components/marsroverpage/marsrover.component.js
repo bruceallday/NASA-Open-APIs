@@ -45,6 +45,7 @@ const RoversPage = () => {
 
         } else {
           setData(data);
+          console.log(data);
           setLoading(false);
           console.log("LANDING DATE: " + data[0])
         }
