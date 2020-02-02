@@ -85,11 +85,11 @@ export default function Header() {
           <Divider />
           <List>
             {[
-              ["+ Mars Rover Images", 'rovers'],
-             [ "+ APOD: Astronomy picture of the day", 'apod'],
+              ["+ Mars Rover Images", "rovers"],
+              ["+ APOD: Astronomy picture of the day", "apod"]
             ].map((text, index) => (
               <Link key={index} to={`/${text[1]}`}>
-                <ListItem button key={text}>
+                <ListItem button key={text} onClick={handleDrawerClose}>
                   <ListItemText primary={text} style={{ color: "#212121" }} />
                 </ListItem>
               </Link>
