@@ -59,7 +59,11 @@ export const useStyles = makeStyles(theme => ({
          },
 
          nasaLogoImage: {
-           width: '5%',
-           marginTop: 10,
+           width: "5%",
+           marginTop: 10
+         },
+
+         pageLink: {
+           textDecoration: 'none',
          }
        }));

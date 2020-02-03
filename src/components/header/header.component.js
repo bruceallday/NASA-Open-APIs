@@ -10,9 +10,9 @@ import List from '@material-ui/core/List'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import IconButton from '@material-ui/core/IconButton'
+import ListItem from "@material-ui/core/ListItem";
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 
 import {
@@ -86,9 +86,10 @@ export default function Header() {
           <List>
             {[
               ["+ Mars Rover Images", "rovers"],
-              ["+ APOD: Astronomy picture of the day", "apod"]
+              ["+ APOD: Astronomy picture of the day", "apod"],
+
             ].map((text, index) => (
-              <Link key={index} to={`/${text[1]}`}>
+              <Link key={index} to={`/${text[1]}`} className={classes.pageLink}>
                 <ListItem button key={text} onClick={handleDrawerClose}>
                   <ListItemText primary={text} style={{ color: "#212121" }} />
                 </ListItem>

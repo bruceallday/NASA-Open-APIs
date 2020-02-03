@@ -63,6 +63,7 @@ const SearchForm = (props) => {
           <InputLabel required id="rover-label">
             Choose a Rover
           </InputLabel>
+          
           <Select
             labelId="rover-label"
             id="rover-select"
