@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import API_KEY from '../../api-key.js'
 
+import { useStyles } from './apod.styles'
 import PageTitle from '../page-title/page-title.component.js'
 import ImageWrapper from '../image-wrapper/image-wrapper.component'
 import VideoWrapper from '../video-wrapper/video-wrapper.component'
@@ -12,6 +13,7 @@ import './apod.styles.scss'
 
 const PictureOfTheDay = () => {
 
+    const classes = useStyles()
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
 
@@ -48,7 +50,7 @@ const PictureOfTheDay = () => {
     console.log(data)
     
     return (
-      <div className="apodSection">
+      <div className={classes.apodSection}>
         {isLoading ? <LinearProgress /> : <p></p>}
         {data ? (
           <div>
@@ -56,9 +58,9 @@ const PictureOfTheDay = () => {
               title={"APOD"}
               subTitle={"Astronomy picture of the day"}
             />
-            <p className="photoDate">{formatDate(data.date)}</p>
-            <h2 className="image-of-the-day">{data.title}</h2>
-            <p className="image-of-the-day">{data.explanation}</p>
+            <p className={classes.photoDate}>{formatDate(data.date)}</p>
+            <h2 className={classes.imageOfTheDay}>{data.title}</h2>
+            <p className={classes.imageOfTheDay}>{data.explanation}</p>
 
             {/*<ImageWrapper url={data.hdurl} />*/}
 
