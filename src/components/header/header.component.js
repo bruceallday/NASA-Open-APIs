@@ -87,11 +87,11 @@ export default function Header() {
             {[
               ["+ Mars Rover Images", "rovers"],
               ["+ APOD: Astronomy picture of the day", "apod"],
-
+              ["+ Asteroids - NeoWs", 'NeoWs'],
             ].map((text, index) => (
               <Link key={index} to={`/${text[1]}`} className={classes.pageLink}>
                 <ListItem button key={text} onClick={handleDrawerClose}>
-                  <ListItemText primary={text} style={{ color: "#212121" }} />
+                  <ListItemText primary={text[0]} style={{ color: "#212121" }} />
                 </ListItem>
               </Link>
             ))}

@@ -10,15 +10,16 @@ import {
 import Header from '../header/header.component.js'
 import RoversPage from '../marsroverpage/marsrover.component.js'
 import PictureOfTheDay from '../APOD/apod.component.js'
-
+import NearEarthObject from '../NeoWs/NearEarthObjects.component'
 import './app.styles.scss'
+import NearEarthObjects from '../NeoWs/NearEarthObjects.component'
 
 const App = () => {
   console.log("APP_START")
     return (
       <div className="">
         <Router>
-          <Header/>
+          <Header />
           <Switch>
             <Route path="/rovers">
               <RoversPage />
@@ -26,6 +27,10 @@ const App = () => {
 
             <Route path="/apod">
               <PictureOfTheDay />
+            </Route>
+
+            <Route path="/NeoWs">
+              <NearEarthObjects/>
             </Route>
 
             <Route path="/home">
