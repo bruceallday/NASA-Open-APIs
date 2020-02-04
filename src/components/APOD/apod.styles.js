@@ -3,10 +3,13 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 export const useStyles = makeStyles(theme => ({
          root: {},
          apodSection: {
-           marginTop: 100,
            display: "flex",
            flexDirection: "column",
            alignItems: "center"
+         },
+
+         contentSection: {
+            padding: '0px 70px 70px 70px'
          },
 
          imageOfTheDay: {
@@ -24,19 +27,6 @@ export const useStyles = makeStyles(theme => ({
            "@media(max-width: 1024px)": {
              height: "70%"
            }
-         },
-
-         pageTitle: {
-           width: "80vw",
-           fontSize: "8em",
-           margin: 0,
-           color: "#212121"
-         },
-
-         pageSubTitle: {
-           width: "80vw",
-           fontSize: "2em",
-           color: "grey"
          },
 
          photoDate: {

@@ -51,24 +51,26 @@ const PictureOfTheDay = () => {
     
     return (
       <div className={classes.apodSection}>
-        {isLoading ? <LinearProgress /> : <p></p>}
+        {isLoading && <LinearProgress />}
         {data ? (
           <div>
             <PageTitle
               title={"APOD"}
               subTitle={"Astronomy picture of the day"}
             />
-            <p className={classes.photoDate}>{formatDate(data.date)}</p>
-            <h2 className={classes.imageOfTheDay}>{data.title}</h2>
-            <p className={classes.imageOfTheDay}>{data.explanation}</p>
+            <div className={classes.contentSection}>
+              <p className={classes.photoDate}>{formatDate(data.date)}</p>
+              <h2 className={classes.imageOfTheDay}>{data.title}</h2>
+              <p className={classes.imageOfTheDay}>{data.explanation}</p>
+              
+              {data.media_type === "video" ? (
+                <VideoWrapper url={data.url} />
+              ) : (
+                <ImageWrapper url={data.hdurl} />
+              )}
+            </div>
 
             {/*<ImageWrapper url={data.hdurl} />*/}
-
-            {data.media_type === "video" ? (
-              <VideoWrapper url={data.url} />
-            ) : (
-              <ImageWrapper url={data.hdurl} />
-            )}
 
             {/*<img className="image-of-the-day" src={} alt="pic of the day" />*/}
             <br />

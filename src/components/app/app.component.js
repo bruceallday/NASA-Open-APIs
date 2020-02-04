@@ -7,12 +7,13 @@ import {
   Redirect
 } from "react-router-dom"
 
-import Header from '../header/header.component.js'
-import RoversPage from '../marsroverpage/marsrover.component.js'
-import PictureOfTheDay from '../APOD/apod.component.js'
-import NearEarthObject from '../NeoWs/NearEarthObjects.component'
+import Header from '../header/header.component'
+import RoversPage from '../marsroverpage/marsrover.component'
+import PictureOfTheDay from '../APOD/apod.component'
+import NearEarthObjects from "../NeoWs/NearEarthObjects.component"
+import Earth from '../earth/earth.component'
+
 import './app.styles.scss'
-import NearEarthObjects from '../NeoWs/NearEarthObjects.component'
 
 const App = () => {
   console.log("APP_START")
@@ -30,7 +31,11 @@ const App = () => {
             </Route>
 
             <Route path="/NeoWs">
-              <NearEarthObjects/>
+              <NearEarthObjects />
+            </Route>
+
+            <Route path='/earth'>
+              <Earth />
             </Route>
 
             <Route path="/home">
@@ -43,7 +48,7 @@ const App = () => {
           </Switch>
         </Router>
       </div>
-    );
+    )
 }
 
 export default App;

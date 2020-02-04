@@ -5,10 +5,10 @@
 }
 
 .searchForm{
-    margin: 30px 0px 30px 0px;
+    
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0px;
 
     @include tablet{
