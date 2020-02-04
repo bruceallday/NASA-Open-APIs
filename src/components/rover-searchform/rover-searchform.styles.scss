@@ -5,11 +5,10 @@
 }
 
 .searchForm{
-    
+    padding: 0px 70px 70px 70px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    padding: 0px;
+    justify-content: space-between;
 
     @include tablet{
         flex-direction: column;
