@@ -65,5 +65,10 @@ export const useStyles = makeStyles(theme => ({
 
          pageLink: {
            textDecoration: 'none',
-         }
+         },
+
+        nasaLogo: {
+          width: '25%',
+          height: '25%',
+        },
        }));

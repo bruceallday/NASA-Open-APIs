@@ -1,5 +1,7 @@
 import React from 'react'
 
+import useStyles from './app.styles'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +15,7 @@ import PictureOfTheDay from '../APOD/apod.component'
 import NearEarthObjects from "../NeoWs/NearEarthObjects.component"
 import Earth from '../earth/earth.component'
 
-import './app.styles.scss'
+
 
 const App = () => {
   console.log("APP_START")
