@@ -20,6 +20,7 @@ import {
 } from "react-router-dom"
 
 import { useStyles } from "./header.styles";
+import { HEADER_PAGE_LINKS } from './header.data'
 
 export default function Header() {
 
@@ -84,26 +85,21 @@ export default function Header() {
           </div>
           <Divider />
           <List>
-            {[
-              ["+ Mars Rover Images", "rovers"],
-              ["+ APOD: Astronomy picture of the day", "apod"],
-              ["+ Asteroids - NeoWs", 'NeoWs'],
-              ['+ Earth', 'earth'],
-            ].map((text, index) => (
-              <Link key={index} to={`/${text[1]}`} className={classes.pageLink}>
+            {HEADER_PAGE_LINKS.map((text, index) => (
+              <Link key={index} to={`/${text[2]}`} className={classes.pageLink}>
                 <ListItem button key={text} onClick={handleDrawerClose}>
-                  <ListItemText primary={text[0]} style={{ color: "#212121" }} />
+                  <ListItemText primary={<div>{text[0] }<span style={{color: 'grey'}} >{` ${text[1]}`}</span></div>} style={{ color: "#212121" }} />
                 </ListItem>
               </Link>
             ))}
           </List>
           <Divider />
           <List>
-            {["All mail", "Trash", "Spam"].map((text, index) => (
+            {/*["All mail", "Trash", "Spam"].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemText primary={text} />
               </ListItem>
-            ))}
+            ))*/}
           </List>
         </Drawer>
       </div>

@@ -8,7 +8,6 @@ import VideoWrapper from '../video-wrapper/video-wrapper.component'
 
 import LinearProgress from "@material-ui/core/LinearProgress"
 
-
 import './apod.styles.scss'
 
 const PictureOfTheDay = () => {

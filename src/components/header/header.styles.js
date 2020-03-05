@@ -67,8 +67,4 @@ export const useStyles = makeStyles(theme => ({
            textDecoration: 'none',
          },
 
-        nasaLogo: {
-          width: '25%',
-          height: '25%',
-        },
        }));

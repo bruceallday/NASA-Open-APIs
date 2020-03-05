@@ -30,7 +30,7 @@ const NearEarthObjects = () => {
     return (
       <div className={classes.root}>
         <PageTitle
-          title={"Asteroids - NeoWs"}
+          title={"NeoWs"}
           subTitle={"Near Earth Object Web Service"}
         />
       </div>

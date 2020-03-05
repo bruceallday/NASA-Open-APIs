@@ -15,8 +15,6 @@ import PictureOfTheDay from '../APOD/apod.component'
 import NearEarthObjects from "../NeoWs/NearEarthObjects.component"
 import Earth from '../earth/earth.component'
 
-
-
 const App = () => {
   console.log("APP_START")
     return (
@@ -24,6 +22,7 @@ const App = () => {
         <Router>
           <Header />
           <Switch>
+          
             <Route path="/rovers">
               <RoversPage />
             </Route>
@@ -47,6 +46,7 @@ const App = () => {
             <Route path="/">
               <div>PAGE NOT FOUND</div>
             </Route>
+
           </Switch>
         </Router>
       </div>
