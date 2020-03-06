@@ -14,6 +14,25 @@ const Epic = () => {
         //API CALL HERE
     }, [])
 
+    const getData = async () => {
+
+        setData(null)
+        setLoading(true)
+
+        const result = await fetch(
+            `https://api.nasa.gov/EPIC/api/natural?api_key=DEMO_KEY`
+        )
+
+        const data = await result.json()
+
+        if (data.error) {
+            console.log(data.error)
+            setLoading(false)
+        }
+
+        
+    }
+
     return(
         <div>
             {isLoading && <LinearProgress/>}
