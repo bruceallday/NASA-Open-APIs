@@ -14,6 +14,7 @@ import RoversPage from '../marsroverpage/marsrover.component'
 import PictureOfTheDay from '../APOD/apod.component'
 import NearEarthObjects from "../NeoWs/NearEarthObjects.component"
 import Earth from '../earth/earth.component'
+import Epic from '../epic/epic.component'
 
 const App = () => {
   console.log("APP_START")
@@ -33,6 +34,10 @@ const App = () => {
 
             <Route path="/NeoWs">
               <NearEarthObjects />
+            </Route>
+
+            <Route path="/epic" >
+              <Epic />
             </Route>
 
             <Route path='/earth'>

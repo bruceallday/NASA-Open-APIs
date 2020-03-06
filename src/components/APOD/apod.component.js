@@ -21,7 +21,6 @@ const PictureOfTheDay = () => {
     }, [])
 
     const getImage = async () => {
-
         setData(null)
         setLoading(true)
 
@@ -38,7 +37,6 @@ const PictureOfTheDay = () => {
             setData(data)
             setLoading(false)
             console.log(data.url)
-            
         }
     }
 
