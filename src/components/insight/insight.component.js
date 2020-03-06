@@ -1,55 +1,56 @@
 import React, { useState, useEffect } from 'react'
 
-import { useStyles } from './epic.styles'
-import { LinearProgress } from '@material-ui/core'
 import PageTitle from '../page-title/page-title.component'
-
 import API_KEY from '../../api-key'
 
-const Epic = () => {
+import { useStyles } from './insight.styles'
+import { LinearProgress } from '@material-ui/core'
+
+const Insight = () => {
 
     const classes = useStyles()
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {
-        //API CALL HERE
         getData()
     }, [])
 
-    const getData = async () => {
+    const getData = async () => { 
 
         setData(null)
         setLoading(true)
 
-        const result = await fetch(
-            `https://api.nasa.gov/EPIC/api/natural?api_key=${API_KEY.apiKey}`
-        )
+        const result = await fetch(`https://api.nasa.gov/insight_weather/?api_key=${API_KEY.apiKey}&feedtype=json&ver=1.0`)
 
         const data = await result.json()
 
         if (data.error) {
             console.log(data.error)
             setLoading(false)
-        }
-        else{
-            setData(data);
-            console.log(data);
+        }else{
+            setData(data)
             setLoading(false)
-            console.log("DATA". data)
+            console.log("DATA", data)
         }
-
 
     }
 
     return(
+
         <div>
-            {isLoading && <LinearProgress/>}
+            {isLoading && <LinearProgress />}
             <PageTitle 
-                title={"EPIC"}
-                subTitle={"Earth Polychromatic Imaging Camera"}/>
+                title="Insight"
+                subTitle="Mars Weather Service API"
+            />
+
+
+            
         </div>
+        
+
     )
 }
 
-export default Epic
+export default Insight

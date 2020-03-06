@@ -15,6 +15,7 @@ import PictureOfTheDay from '../APOD/apod.component'
 import NearEarthObjects from "../NeoWs/NearEarthObjects.component"
 import Earth from '../earth/earth.component'
 import Epic from '../epic/epic.component'
+import Insight from '../insight/insight.component'
 
 const App = () => {
   console.log("APP_START")
@@ -42,6 +43,10 @@ const App = () => {
 
             <Route path='/earth'>
               <Earth />
+            </Route>
+
+            <Route path='/insight'>
+              <Insight />
             </Route>
 
             <Route path="/home">
