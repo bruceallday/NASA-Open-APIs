@@ -16,6 +16,8 @@ import NearEarthObjects from "../NeoWs/NearEarthObjects.component"
 import Earth from '../earth/earth.component'
 import Epic from '../epic/epic.component'
 import Insight from '../insight/insight.component'
+import MediaLibrary from '../media-library/media-library.component'
+
 
 const App = () => {
   console.log("APP_START")
@@ -47,6 +49,10 @@ const App = () => {
 
             <Route path='/insight'>
               <Insight />
+            </Route>
+
+            <Route>
+              <MediaLibrary />
             </Route>
 
             <Route path="/home">

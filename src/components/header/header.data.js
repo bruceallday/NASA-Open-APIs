@@ -4,6 +4,7 @@ export const HEADER_PAGE_LINKS = [
     [" NeoWs ","(Near earth objects web service)" ,'NeoWs'],
     [' Earth ', "(Earth observation data)", 'earth'],
     ["EPIC ", "(Earth Polychromatic Imaging Camera)", "epic"],
-    ["Insight", "(Mars Weather Api)", "insight"]
+    ["Insight", "(Mars Weather Api)", "insight"],
+    ["Media Library", "(NASA Image and Video Library)", "library"],
 ]
 

@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from 'react'
 
+import { useStyles } from './media-library.styles'
 import PageTitle from '../page-title/page-title.component'
+
 import API_KEY from '../../api-key'
-
-import { useStyles } from './insight.styles'
 import { LinearProgress } from '@material-ui/core'
+import { set } from 'date-fns'
 
-const Insight = () => {
+const MediaLIbrary = () => {
 
     const classes = useStyles()
-    const [data, setData] = useState(null)
-    const [isLoading, setLoading] = useState(false)
+    const [data, setData] = useState()
+    const [isLoading, setLoading] = useState()
 
     useEffect(() => {
         getData()
     }, [])
 
-    const getData = async () => { 
+    const getData = async () =>{
 
         setData(null)
         setLoading(true)
 
-        const result = await fetch(`https://api.nasa.gov/insight_weather/?api_key=${API_KEY.apiKey}&feedtype=json&ver=1.0`)
+        const result = await fetch(`https://images-api.nasa.gov/search?q=apollo%2011...`)
         const data = await result.json()
 
         if (data.error) {
@@ -32,24 +33,19 @@ const Insight = () => {
             setLoading(false)
             console.log("DATA", data)
         }
-
     }
 
     return(
 
         <div>
-            {isLoading && <LinearProgress />}
+            {isLoading && <LinearProgress/>}
             <PageTitle 
-                title="Insight"
-                subTitle="Mars Weather Service API"
+                title="Media Library"
+                subTitle="NASA Image and Video Library"
             />
-
-
             
         </div>
-        
-
     )
 }
 
-export default Insight
+export default MediaLIbrary
