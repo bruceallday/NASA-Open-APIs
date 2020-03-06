@@ -13,12 +13,13 @@ import {
   KeyboardDatePicker
 } from "@material-ui/pickers";
 
-import "./rover-searchform.styles.scss";
+import { useStyles } from './rover-searchform.styles'
 
 import ROVER_DATA from  '../../data/roverdata/rovercameras.js' 
 
 const SearchForm = (props) => {
 
+    const styles = useStyles()
     const [cam, handleCam] = useState("")
     const [sol, handleSol] = useState("")
     const [date, handleDate] = useState(ROVER_DATA.rover.landing_dates[0][1])
@@ -58,8 +59,8 @@ const SearchForm = (props) => {
     }
 
     return (
-      <div className="searchForm">
-        <div>
+      <div className={styles.root}>
+        <div className={styles.formItem}>
           <InputLabel required id="rover-label">
             Choose a Rover
           </InputLabel>
@@ -76,7 +77,7 @@ const SearchForm = (props) => {
           </Select>
         </div>
 
-        <div>
+        <div className={styles.formItem} >
           <InputLabel id="camera-label">Choose a Camera</InputLabel>
           <Select
             required
@@ -100,31 +101,35 @@ const SearchForm = (props) => {
                 id="standard-basic"
                 placeholder="0000"
         label="Sol (0000 - 2540)"/>*/}
+        <div className={styles.formItem}>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <KeyboardDatePicker
+              disableToolbar
+              variant="inline"
+              format="yyyy/MM/dd"
+              id="date-picker-inline"
+              label="Choose a date"
+              value={date}
+              onChange={handleDateChange}
+              KeyboardButtonProps={{
+                "aria-label": "change date"
+              }}
+            />
+          </MuiPickersUtilsProvider>
+        </div>
 
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <KeyboardDatePicker
-            disableToolbar
-            variant="inline"
-            format="yyyy/MM/dd"
-            id="date-picker-inline"
-            label="Choose a date"
-            value={date}
-            onChange={handleDateChange}
-            KeyboardButtonProps={{
-              "aria-label": "change date"
+        <div className={styles.formItem}>
+          <Button
+            style={{ color: "#212121" }}
+            variant="contained"
+            onClick={() => {
+              props.getData(date, cam[0], rover);
             }}
-          />
-        </MuiPickersUtilsProvider>
+          >
+            LAUNCH
+          </Button>
+        </div>
 
-        <Button
-         style={{color: "#212121"}}
-          variant="contained"
-          onClick={() => {
-            props.getData(date, cam[0], rover);
-          }}
-        >
-          LAUNCH
-        </Button>
       </div>
     );
 }
