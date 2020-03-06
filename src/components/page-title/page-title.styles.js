@@ -2,21 +2,28 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: 70,
-    paddingLeft: 70,
-    width: '80vh',
+    paddingTop: 60,
+    paddingLeft: 20,
+
+    //DESKTOP
+    // paddingTop: 70,
+    // paddingLeft: 70,
+    // width: '80vh',
 
   },
   pageTitle: {
-    width: "80vw",
-    fontSize: "8em",
-    margin: 0,
+
+    //MOBILE
+    fontSize: "4.1em",
     color: "#212121"
+
+    //DESKTOP
+    // width: "80vw",
+    // fontSize: "8em",
+    // color: "#212121"
   },
 
   pageSubTitle: {
-    width: "80vw",
-    fontSize: "2em",
     color: "grey"
   }
 }));

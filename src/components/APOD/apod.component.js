@@ -8,8 +8,6 @@ import VideoWrapper from '../video-wrapper/video-wrapper.component'
 
 import LinearProgress from "@material-ui/core/LinearProgress"
 
-import './apod.styles.scss'
-
 const PictureOfTheDay = () => {
 
     const classes = useStyles()
@@ -56,9 +54,9 @@ const PictureOfTheDay = () => {
               subTitle={"Astronomy picture of the day"}
             />
             <div className={classes.contentSection}>
-              <p className={classes.photoDate}>{formatDate(data.date)}</p>
-              <h2 className={classes.imageOfTheDay}>{data.title}</h2>
-              <p className={classes.imageOfTheDay}>{data.explanation}</p>
+              <p className={classes.root}>{formatDate(data.date)}</p>
+              <h2 className={classes.root}>{data.title}</h2>
+              <p className={classes.root}>{data.explanation}</p>
               
               {data.media_type === "video" ? (
                 <VideoWrapper url={data.url} />

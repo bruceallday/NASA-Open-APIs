@@ -51,7 +51,7 @@ const App = () => {
               <Insight />
             </Route>
 
-            <Route>
+            <Route path='/library'>
               <MediaLibrary />
             </Route>
 

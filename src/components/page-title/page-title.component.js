@@ -7,9 +7,9 @@ const PageTitle = (props) =>{
     const { title, subTitle } = props
     return (
       <div className={classes.root}>
-        <p className={classes.pageTitle}>
+        <div className={classes.pageTitle}>
           <span>{title}</span>
-        </p>
+        </div>
         <p className={classes.pageSubTitle}>
           <span>{subTitle}</span>
         </p>
