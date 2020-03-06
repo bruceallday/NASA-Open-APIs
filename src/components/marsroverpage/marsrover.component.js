@@ -9,10 +9,11 @@ import GridList from "@material-ui/core/GridList"
 import GridListTile from "@material-ui/core/GridListTile"
 import LinearProgress from "@material-ui/core/LinearProgress"
 
-import './marsrover.styles.scss'
+import { useStyles } from './marsrover.styles'
 
 const RoversPage = () => {
 
+    const styles = useStyles()
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
     
@@ -54,7 +55,7 @@ const RoversPage = () => {
 
           <div>
 
-            <div className="roverComponent">
+            <div className={styles.root}>
 
               <PageTitle title={"Mars Rovers"} subTitle={"Image data gathered by Curiosity, Opportunity and Spirit "} />
               <SearchForm getData={getData} />
