@@ -70,7 +70,8 @@ export default MediaLibrary
 ```
 
 ### PAGES:
-Select from some of my favourtie NASA API'S
+Select from some of my favourtie NASA API'S<br>
+
 ![](./readme-images/nasa_api.gif)
 
 ## Page Title Component Template:
