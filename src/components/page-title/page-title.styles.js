@@ -14,7 +14,7 @@ export const useStyles = makeStyles(theme => ({
   pageTitle: {
 
     //MOBILE
-    fontSize: "4.1em",
+    fontSize: "4em",
     color: "#212121"
 
     //DESKTOP

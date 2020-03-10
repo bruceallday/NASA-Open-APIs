@@ -36,14 +36,12 @@ const MediaLIbrary = () => {
     }
 
     return(
-
         <div>
             {isLoading && <LinearProgress/>}
             <PageTitle 
                 title="Media Library"
                 subTitle="NASA Image and Video Library"
             />
-            
         </div>
     )
 }
