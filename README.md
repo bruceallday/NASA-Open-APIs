@@ -25,7 +25,7 @@ JS ES6
 ## Page Component Template:
 After reiterating over my code structure for the pages I decided the code below was a solid starting template for each page. 
 
-```
+```javascript
 const MediaLibrary = () => {
 
     const classes = useStyles()
@@ -77,7 +77,7 @@ Select from some of my favourtie NASA API'S<br>
 ## Page Title Component Template:
 Custom Title and SubTitle component takes the ```title``` and ```subTitle``` as props. Creating a modular, consistent, page title.
 
-```
+```javascript
 import React from 'react'
 import { useStyles } from './page-title.styles'
 
