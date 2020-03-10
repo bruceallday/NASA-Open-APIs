@@ -57,7 +57,7 @@ const MediaLibrary = () => {
     return(
         <div>
             {isLoading && <LinearProgress/>}
-            <PageTitle 
+            <PageTitle
                 title="PAGE_TITLE"
                 subTitle="PAGE_SUBTITLE"
             />
