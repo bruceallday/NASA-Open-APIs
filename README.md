@@ -2,7 +2,7 @@
 A collection of my favourite NASA API's brought together using React and Material-UI <br>
 
 
-![](./readme-images/apod_img.png) ![](./readme-images/nasa_api.gif)
+![](./readme-images/apod_img.png)
 
 ## Technologies used
 * [JS ES6](http://es6-features.org/)
@@ -69,6 +69,10 @@ export default MediaLibrary
 
 ```
 
+### PAGES:
+Select from some of my favourtie NASA API'S
+![](./readme-images/nasa_api.gif)
+
 ## Page Title Component Template:
 Custom Title and SubTitle component takes the ```title``` and ```subTitle``` as props. Creating a modular, consistent, page title.
 
@@ -96,12 +100,8 @@ export default PageTitle
 
 ```
 
-### PAGES:
-Select from some of my favourtie NASA API'S
-![](./readme-images/menu_img.png)
-
 ## Environment
-* macOScatalina: 10.15.3
+* macOS catalina: 10.15.3
 * VS Code: 1.39.1
 
 ## Authors
